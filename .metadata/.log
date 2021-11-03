@@ -202,3 +202,78 @@ Contains: Missing antlr:antlr:jar:javadoc:2.7.7
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-03 09:41:34.795
 !MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.dvPaxHMR => OK
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-11-03 09:45:40.871
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-11-03 09:45:40.913
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-11-03 09:45:40.937
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-11-03 09:45:42.357
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-11-03 09:45:42.366
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-11-03 09:46:04.523
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-11-03 09:46:04.528
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-03 09:46:15.075
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-03 09:46:15.075
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@2492951e[org.springframework.tooling.boot.ls:1.28.0.202109130547(id=555)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-03 09:46:15.080
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-11-03 09:46:15.290
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-11-03 09:46:15.296
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-03 09:46:20.839
+!MESSAGE Boot LS startup time from start to initialized: 5757ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-03 09:46:21.111
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.vcMwWnEXisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-03 09:46:21.112
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-03 09:46:21.113
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-03 09:46:21.114
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-03 09:46:21.114
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-03 09:46:21.115
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.vcMwWnEX => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-03 09:46:21.117
+!MESSAGE classpath=51 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-03 09:46:21.118
+!MESSAGE buffering callback sts4.classpath.vcMwWnEX dating-app-java false 51
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-03 09:46:21.118
+!MESSAGE executing callback sts4.classpath.vcMwWnEX 1 batched events
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-11-03 09:46:22.015
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-11-03 09:46:22.020
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-03 09:46:22.245
+!MESSAGE executing callback sts4.classpath.vcMwWnEX SUCCESS [done]
