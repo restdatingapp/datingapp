@@ -1,0 +1,17 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.username">datingappuser</property>
+		<property name="hibernate.connection.password">RestRevature2021</property>
+		<property name="hibernate.connection.url">jdbc://postgresql://restdatingapp.ccpkdrzj7ggc.us-east-2.rds.amazonaws.com:5342/dating_app</property>
+		<property name="hibernate.connection.driver.class">org.postresql.Driver</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="hibernate.connection.pool.size">10</property>
+		<property name="hibernate.hbm2dll.auto">create</property>
+
+	</session-factory>
+</hibernate-configuration>
