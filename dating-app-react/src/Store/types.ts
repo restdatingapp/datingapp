@@ -6,3 +6,7 @@ export interface IUser{
     username: string,
     password: string
 }
+
+export type AppState = {
+    user: IUser;
+}
