@@ -1,22 +1,19 @@
 package com.datingappspringboot.models;
 
-import javax.persistence.CascadeType;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 @Entity
 @Table(name = "users")
 public class User {
 	@Id
 	@Column(name = "userid")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	@Column(name = "first_name", nullable = false)
 	private String firstname;
@@ -30,10 +27,20 @@ public class User {
 	private String description;
 	@Column(name = "nickname", nullable = false)
 	private String nickname;
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "gender_id")
-	private Gender gender;
-	public User(int id, String firstname, String lastname, String email,String password, String description, Gender gender,
+	
+	/*
+	 * @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	 * 
+	 * @JoinColumn(name = "gender_id")
+	 *private Gender gender;
+	*/
+	
+	
+	public User()
+	{
+		super();
+	}
+	public User(int id, String firstname, String lastname, String email,String password, String description, 
 			String nickname) {
 		super();
 		this.id = id;
@@ -42,16 +49,14 @@ public class User {
 		this.email = email;
 		this.password = password;
 		this.description = description;
-		this.gender = gender;
 		this.nickname = nickname;
 	}
-	public User(String firstname, String lastname, String email,String password, String description, Gender gender, String nickname) {
+	public User(String firstname, String lastname, String email,String password, String description, String nickname) {
 		super();
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.email = email;
 		this.description = description;
-		this.gender = gender;
 		this.password = password;
 		this.nickname = nickname;
 	}
@@ -60,12 +65,6 @@ public class User {
 	}
 	public void setDescription(String description) {
 		this.description = description;
-	}
-	public Gender getGender() {
-		return gender;
-	}
-	public void setGender(Gender gender) {
-		this.gender = gender;
 	}
 	public String getNickname() {
 		return nickname;
@@ -106,7 +105,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email
-				+ ", description=" + description + ", genderid=" + gender + ", nickname=" + nickname + "]";
+				+ ", description=" + description + ", nickname=" + nickname + "]";
 	}
 }
 
