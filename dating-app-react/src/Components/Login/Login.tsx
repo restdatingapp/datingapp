@@ -1,23 +1,48 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {useNavigate, Link} from 'react-router-dom';
+import { loginUser } from '../../Actions/UserActions';
 import ReactDOM from 'react-dom';
 import { IUser } from '../../Store/types';
 
-export const Login:React.FC<{text: string}> = ({text}) => {
-    console.log("checking to see if this functional component works");
+export const Login:React.FC<any> = () => {
+
+    const appState = useSelector<any,any>((state) => state);
+    console.log(appState);
+
+    const dispatch = useDispatch();
+
+    const navigate = useNavigate();
+
 
         const [username, setUsername] = useState("");
         const [password, setPassword] = useState("");
 
-    const handleSubmit = (event: any) => {
-        event.preventDefault();
-        alert(`The name you entered was: ${username}`);
-        alert(`The password you entered was: ${password}`);
+        useEffect(() => {
+            if(appState.user.id > 0){
+                navigate('/home');
+            }
+        }, [appState]);
+
+    const handleChange = (event: any) => {
+        if(event.target.name === 'username'){
+            setUsername(event.target.value);
+        } else{
+            setPassword(event.target.value);
+        }
+
+    }
+
+    const login = async () =>{
+        console.log("firing login async");
+        await dispatch(
+            loginUser({username, password})
+        )
     }
 
     return (
         
     <div className="login">
-    <span>{text}</span>
 
             <div className="text-container">
                 <h1 className="login-h1">Welcome to the REST Dating App!</h1>
@@ -27,15 +52,15 @@ export const Login:React.FC<{text: string}> = ({text}) => {
             <div className="input-div">
             <h4 className="login-h4">Enter Username</h4>
                     <input className="login-input" autoComplete="off" type="text" name="username"
-                        placeholder="Username" id="username" onChange={(e) => setUsername(e.target.value)}/>
+                        placeholder="Username" id="username" onChange={handleChange}/>
                         </div>
                         <div className="input-div">
                     <h4 className="login-h4">Enter Password</h4>
                     <input className="login-input" type="password" name="password"
-                        placeholder="Password" id="password" onChange={(e) => setPassword(e.target.value)}/>
+                        placeholder="Password" id="password" onChange={handleChange}/>
                 </div>
             </form>
-            <button className="login-button" onClick = {handleSubmit}>Login</button>
+            <button className="login-button" onClick = {login}>Login</button>
         </div>
     )
 }
