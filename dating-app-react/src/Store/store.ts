@@ -14,3 +14,8 @@ const initialState:AppState = {
         password: ""
     }
 }
+
+const middleWare = [thunk];
+
+export const store = createStore(reducer, initialState, applyMiddleware(...middleWare));
+
