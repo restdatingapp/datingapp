@@ -8,8 +8,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.NamedQueries;
+import org.hibernate.annotations.NamedQuery;
+
 @Entity
 @Table(name = "users")
+
+
 public class User {
 	@Id
 	@Column(name = "userid")
@@ -39,6 +44,12 @@ public class User {
 	public User()
 	{
 		super();
+	}
+	
+	public User(String nickname, String password) {
+		super();
+		this.nickname = nickname;
+		this.password = password;
 	}
 	public User(int id, String firstname, String lastname, String email,String password, String description, 
 			String nickname) {
