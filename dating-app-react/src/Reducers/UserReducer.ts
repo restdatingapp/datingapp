@@ -6,7 +6,7 @@ let initialState: IUser = {
     firstname: '',
     lastname: '',
     email: '',
-    username: '',
+    nickname: '',
     password: ''
 };
 

@@ -10,7 +10,7 @@ const initialState:AppState = {
         firstname: "",
         lastname: "",
         email: "",
-        username: "",
+        nickname: "",
         password: ""
     }
 }

@@ -4,7 +4,7 @@ import { IUser } from '../Store/types';
 import { LOGIN_USER } from './ActionTypes';
 
 interface UserLogin{
-    username: string,
+    nickname: string,
     password: string
 }
 
@@ -12,7 +12,8 @@ export const loginUser = (user:UserLogin) => async (dispatch:any) => {
     let loggedIn: IUser;
 
     try{
-        const res = await axios.post('', user);
+        console.log(user);
+        const res = await axios.post('http://localhost:8080/user/login', user);
         console.log(res.data)
 
         loggedIn = {
@@ -20,7 +21,7 @@ export const loginUser = (user:UserLogin) => async (dispatch:any) => {
             firstname: res.data.firstname,
             lastname: res.data.lastname,
             email: res.data.email,
-            username: res.data.username,
+            nickname: res.data.nickname,
             password: res.data.password
 
         }
@@ -37,7 +38,7 @@ export const loginUser = (user:UserLogin) => async (dispatch:any) => {
             firstname: '',
             lastname: '',
             email: '',
-            username: '',
+            nickname: '',
             password: ''
         }
 
