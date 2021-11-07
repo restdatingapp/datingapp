@@ -14,8 +14,13 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.NamedQueries;
+import org.hibernate.annotations.NamedQuery;
+
 @Entity
 @Table(name = "users")
+
+
 public class User {
 	@Id
 	@Column(name = "userid")
@@ -47,8 +52,10 @@ public class User {
 		super();
 	}
 
+
 	public User(int id, String firstname, String lastname, String email, String password, String description,
 			String nickname, Gender gender, Gender interestedgender) {
+
 		super();
 		this.id = id;
 		this.firstname = firstname;
