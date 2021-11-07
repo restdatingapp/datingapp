@@ -9,39 +9,57 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-public class Gender{
-	
-}
+@Entity
+@Table(name = "genders")
+public class Gender {
 
-/*
- * @Entity
- * 
- * @Table(name = "gender") public class Gender {
- * 
- * @Id
- * 
- * @Column(name = "gender_id")
- * 
- * @GeneratedValue(strategy = GenerationType.IDENTITY) private int id;
- * 
- * @Column(name = "gender") private String gender;
- * 
- * @OneToMany(mappedBy = "users") private User user;
- * 
- * public Gender(String gender) { super();
- * 
- * this.gender = gender; }
- * 
- * public Gender(int id, String gender) { super(); this.id = id; this.gender =
- * gender; }
- * 
- * public int getId() { return id; }
- * 
- * public void setId(int id) { this.id = id; }
- * 
- * public String getGender() { return gender; }
- * 
- * public void setGender(String gender) { this.gender = gender; }
- * 
- * }
- */
+	@Id
+	@Column(name = "gender_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+
+	@Column(name = "gender")
+	private String gender;
+
+
+
+	public Gender() {
+		super();
+
+	}
+
+	public Gender(String gender) {
+		super();
+
+		this.gender = gender;
+	}
+
+	public Gender(int id, String gender) {
+		super();
+		this.id = id;
+		this.gender = gender;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "Gender [id=" + id + ", gender=" + gender + "]";
+	}
+
+}
