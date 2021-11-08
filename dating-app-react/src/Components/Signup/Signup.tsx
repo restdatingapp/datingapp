@@ -26,6 +26,24 @@ export const Signup:React.FC<any> = () => {
                 <label>Password: &nbsp; </label>
                 <input type='password' required />
                 <br />
+                <label>Gender: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <select name='genderSelector'>
+                    <option value='male'>male</option>
+                    <option value='female'>female</option>
+                    <option value='non-binary'>non-binary</option>
+                    <option value='doNotDisclose'>do not disclose</option>
+                </select>
+                <br />
+                <br />
+                <label>Interested in:</label>
+                <br />
+                <label>   Male:</label>
+                <input type='checkbox' value='male' />
+                <label>   Female:</label>
+                <input type='checkbox' value='female' />
+                <label>   Non-binary</label>
+                <input type='checkbox' value='non-binary' />
+                <br />
                 <br />
                 <input type='submit' value='submit' />
             </form>
