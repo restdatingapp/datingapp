@@ -35,11 +35,11 @@ public class User {
 	@Column(name = "nickname", nullable = false)
 	private String nickname;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "gender_id")
 	private Gender gender;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "interested_gender")
 	private Gender interestedgender;
 
@@ -149,7 +149,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email
-				+ ", description=" + description + ", nickname=" + nickname + ", gender=" + gender + "interested="
+				+ ", description=" + description + ", nickname=" + nickname + ", gender=" + gender + "interestedgender="
 				+ interestedgender + "]";
 	}
 }
