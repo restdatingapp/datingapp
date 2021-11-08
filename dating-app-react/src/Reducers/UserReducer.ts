@@ -17,6 +17,7 @@ export const userReducer = (state: IUser = initialState, action:Action) => {
     switch(action.type){
         case LOGIN_USER:
             initialState = action.payload;
+            console.log(initialState);
             return {
                 ...initialState
             }
