@@ -8,11 +8,28 @@ interface UserLogin{
     password: string
 }
 
+interface gender{
+    id: number,
+    gender: string
+}
+
+interface UserSignup{
+    firstname: string,
+    lastname: string,
+    email: string,
+    nickname: string,
+    password: string
+    gender: gender;
+}
+
+export const buildGender = (gender:gender) =>{
+    
+}
+
 export const loginUser = (user:UserLogin) => async (dispatch:any) => {
     let loggedIn: IUser;
 
     try{
-        console.log(user);
         const res = await axios.post('http://localhost:8080/user/login', user);
         console.log(res.data)
 
@@ -47,4 +64,17 @@ export const loginUser = (user:UserLogin) => async (dispatch:any) => {
             payload: loggedIn
         });
     }
+}
+
+export const signupUser = (user:UserSignup) => async (dispatch:any) => {
+    let signedIn : IUser;
+
+    try{
+        const res = await axios.post('http://localhost:8080/user/create', user);
+        console.log(res.data);
+
+    } catch(e){
+        console.log(e);
+    }
+
 }
