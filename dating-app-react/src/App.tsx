@@ -5,13 +5,18 @@ import { Signup } from './Components/Signup/Signup';
 
 import "./App.css";
 import { Home } from './Components/Home/Home';
+import { Dashboard } from './Components/Dashboard/Dashboard';
+import { Cards } from './Components/Cards/cards';
+
 function App() {
   return (
     <div className="App">
         <Routes>
+        <Route path = 'cards' element = {<Cards />}></Route>
           <Route path = 'login' element = {<Login />}></Route>
           <Route path = 'signup' element = {<Signup />}></Route>
           <Route path = 'home' element = {<Home />}></Route>
+          <Route path = 'dashboard' element = {<Dashboard />}></Route>
         </Routes>
     </div>
   );
