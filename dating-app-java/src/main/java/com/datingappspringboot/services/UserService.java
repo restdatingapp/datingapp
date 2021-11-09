@@ -63,9 +63,7 @@ public class UserService {
 	public User getUserEmail(String email) {
 		return uDao.findByEmail(email);
 	}
-<<<<<<< HEAD
-=======
-	
+
 	public User login(User u) throws UserDoesNotExistException {
 		User newUser = new User();
 		newUser = uDao.findByNickname(u.getNickname());
@@ -77,6 +75,6 @@ public class UserService {
 		}
 	}
 	
->>>>>>> fc1f249c14d6fbe32892abceaf5c53dcb8d7f992
+
 
 }
