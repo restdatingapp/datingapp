@@ -68,13 +68,12 @@ public class UserService {
 	
 	public User login(User u) throws UserDoesNotExistException {
 		User newUser = new User();
-		System.out.println("this is" + u.getNickname());
 		newUser = uDao.findByNickname(u.getNickname());
 		if(newUser == null) {
 			throw new UserDoesNotExistException();
 		} else {
 			System.out.println("You are signed in " + newUser.getNickname());
-			return u;
+			return newUser;
 		}
 	}
 	

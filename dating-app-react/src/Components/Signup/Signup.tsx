@@ -8,7 +8,23 @@ import { IUser } from '../../Store/types';
 
 export const Signup:React.FC<any> = () => {
 
+    const appState = useSelector<any, any>((state) => state);
 
+    const dispatch = useDispatch();
+
+    const navigate = useNavigate();
+
+    const [firstname, setFirstName] = useState("");
+    const [lastname, setLastName ] = useState("");
+    const [email, setEmail] = useState("");
+    const [nickname, setnickname] = useState("");
+    const [password, setPassword] = useState("");
+
+    useEffect(() => {
+        if (appState.user.id > 0) {
+            navigate('home');
+        }
+    }, [appState]);
 
     return(
         <div className='signup'>
@@ -33,6 +49,7 @@ export const Signup:React.FC<any> = () => {
                 <label>Password: &nbsp; </label>
                 <input type='password' className='signupInput' placeholder='Enter password' required />
                 <br />
+                <br />
                 <label>Gender: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <select name='genderSelector'>
                     <option value='male'>male</option>
@@ -43,13 +60,11 @@ export const Signup:React.FC<any> = () => {
                 <br />
                 <br />
                 <label>Interested in:</label>
-                <br />
-                <label>   Male:</label>
-                <input type='checkbox' value='male' />
-                <label>   Female:</label>
-                <input type='checkbox' value='female' />
-                <label>   Non-binary</label>
-                <input type='checkbox' value='non-binary' />
+                <select name='interestedInSelector'>
+                    <option value='male'>male</option>
+                    <option value='female'>female</option>
+                    <option value='both'>both</option>
+                </select>
                 <br />
                 <br />
                 <input type='submit' className='signupSubmit' value='submit' />
