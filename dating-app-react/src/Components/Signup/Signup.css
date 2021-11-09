@@ -1,0 +1,38 @@
+.logo {
+    flex: 1;
+    width: 200px;
+    height: 154px;
+}
+
+.logoDiv {
+    width: 100%;
+    background-color: #3C0530;
+}
+
+.signupDiv {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.signupInput {
+    width: 500px;
+    text-align: center;
+    -webkit-border-radius: 20px;
+}
+
+.signupInput:hover{
+    box-shadow: 2px 2px 10px #FD1BCC;
+}
+
+.signupSubmit{
+    font-family: 'Arial black';
+}
+
+.signupSubmit:hover{
+    box-shadow: 2px 2px 10px #FD1BCC;
+}
+
+h3{
+    font-family: 'trebuchet MS';
+}

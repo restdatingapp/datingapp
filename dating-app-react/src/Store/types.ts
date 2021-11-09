@@ -3,7 +3,7 @@ export interface IUser{
     firstname: string,
     lastname: string,
     email: string,
-    username: string,
+    nickname: string,
     password: string
 }
 

@@ -15,7 +15,7 @@ export const Login:React.FC<any> = () => {
     const navigate = useNavigate();
 
 
-        const [username, setUsername] = useState("");
+        const [nickname, setnickname] = useState("");
         const [password, setPassword] = useState("");
 
         useEffect(() => {
@@ -25,8 +25,8 @@ export const Login:React.FC<any> = () => {
         }, [appState]);
 
     const handleChange = (event: any) => {
-        if(event.target.name === 'username'){
-            setUsername(event.target.value);
+        if(event.target.name === 'nickname'){
+            setnickname(event.target.value);
         } else{
             setPassword(event.target.value);
         }
@@ -36,7 +36,7 @@ export const Login:React.FC<any> = () => {
     const login = async () =>{
         console.log("firing login async");
         await dispatch(
-            loginUser({username, password})
+            loginUser({nickname, password})
         )
     }
 
@@ -50,9 +50,9 @@ export const Login:React.FC<any> = () => {
             </div>
             <form className="login-form">
             <div className="input-div">
-            <h4 className="login-h4">Enter Username</h4>
-                    <input className="login-input" autoComplete="off" type="text" name="username"
-                        placeholder="Username" id="username" onChange={handleChange}/>
+            <h4 className="login-h4">Enter nickname</h4>
+                    <input className="login-input" autoComplete="off" type="text" name="nickname"
+                        placeholder="nickname" id="nickname" onChange={handleChange}/>
                         </div>
                         <div className="input-div">
                     <h4 className="login-h4">Enter Password</h4>
