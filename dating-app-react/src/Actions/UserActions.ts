@@ -8,10 +8,6 @@ interface UserLogin{
     password: string
 }
 
-interface gender{
-    id: number,
-    gender: string
-}
 
 interface UserSignup{
     firstname: string,
@@ -19,12 +15,9 @@ interface UserSignup{
     email: string,
     nickname: string,
     password: string
-    gender: gender;
+    Gender: object;
 }
 
-export const buildGender = (gender:gender) =>{
-    
-}
 
 export const loginUser = (user:UserLogin) => async (dispatch:any) => {
     let loggedIn: IUser;
@@ -67,7 +60,7 @@ export const loginUser = (user:UserLogin) => async (dispatch:any) => {
 }
 
 export const signupUser = (user:UserSignup) => async (dispatch:any) => {
-    let signedIn : IUser;
+
 
     try{
         const res = await axios.post('http://localhost:8080/user/create', user);
