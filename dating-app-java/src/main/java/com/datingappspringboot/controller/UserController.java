@@ -78,7 +78,7 @@ public class UserController {
 	 */
 
 	@PostMapping(value = "/create")
-	public User createFood(@RequestBody User u) {
+	public User createUser(@RequestBody User u) {
 		System.out.println(u);
 		return uServ.createUser(u);
 	}
