@@ -3,6 +3,9 @@ package com.datingappspringboot.services;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.NamedQuery;
+
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -46,6 +49,22 @@ public class UserService {
 		} catch (Exception e) {
 			return new ArrayList<User>();
 		}
+	}
+	
+	
+	
+	//Attempting to give back all users except for the 
+	//the current user, first later will implement
+	//a list of users that matches interested in genders
+
+	public List<User>getDates(User u){
+		int userId = u.getId();
+		int interestedgender = u.getInterestedgender().getId();
+		System.out.println("This user is interested in: " +interestedgender);
+		System.out.println("This user's Id is: " + userId);
+	return  uDao.getDates(userId, interestedgender);
+		
+		
 	}
 
 	public User getByFirstName(String first_name) {

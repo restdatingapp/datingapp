@@ -1,0 +1,66 @@
+package com.datingappspringboot.models;
+
+import java.sql.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+
+@Entity
+@Table(name="likes")
+public class Likes {
+	
+	@Id
+	@Column(name="post_id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
+	
+	
+	private User likeGiver;
+	private User likeReceiver;
+	private Date timeStamp;
+	
+	
+	
+	public Likes(int likeGiver, int likeReceiver) {
+		super();
+		this.likeGiver = likeGiver;
+		this.likeReceiver = likeReceiver;
+	}
+	
+	
+	
+	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getLikeGiver() {
+		return likeGiver;
+	}
+	public void setLikeGiver(int likeGiver) {
+		this.likeGiver = likeGiver;
+	}
+	public int getLikeReceiver() {
+		return likeReceiver;
+	}
+	public void setLikeReceiver(int likeReceiver) {
+		this.likeReceiver = likeReceiver;
+	}
+	public Date getTimeStamp() {
+		return timeStamp;
+	}
+	public void setTimeStamp(Date timeStamp) {
+		this.timeStamp = timeStamp;
+	}
+	
+
+}

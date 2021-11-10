@@ -1,0 +1,69 @@
+package com.datingappspringboot.models;
+
+import java.sql.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+//I don't think we need this class at all
+
+//
+//
+//@Entity
+//@Table(name="likes")
+//public class Likes {
+//	
+//	@Id
+//	@Column(name="post_id")
+//	@GeneratedValue(strategy=GenerationType.IDENTITY)
+//	private int id;
+//	
+//	
+//	private User likeGiver;
+//	private User likeReceiver;
+//	private Date timeStamp;
+//	
+//	
+//	
+//	public Likes(User likeGiver, User likeReceiver) {
+//		super();
+//		this.likeGiver = likeGiver;
+//		this.likeReceiver = likeReceiver;
+//	}
+//	
+//	
+//	
+//	
+//	
+//	public int getId() {
+//		return id;
+//	}
+//	public void setId(int id) {
+//		this.id = id;
+//	}
+//	public User getLikeGiver() {
+//		return likeGiver;
+//	}
+//	public void setLikeGiver(User likeGiver) {
+//		this.likeGiver = likeGiver;
+//	}
+//	public User getLikeReceiver() {
+//		return likeReceiver;
+//	}
+//	public void setLikeReceiver(User likeReceiver) {
+//		this.likeReceiver = likeReceiver;
+//	}
+//	public Date getTimeStamp() {
+//		return timeStamp;
+//	}
+//	public void setTimeStamp(Date timeStamp) {
+//		this.timeStamp = timeStamp;
+//	}
+//	
+
+}
