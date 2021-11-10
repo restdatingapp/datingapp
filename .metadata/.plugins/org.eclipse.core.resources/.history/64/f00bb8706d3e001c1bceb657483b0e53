@@ -1,0 +1,7 @@
+spring.datasource.url=jdbc:postgresql://emansrevdatabases.cltgn8pt9grc.us-east-2.rds.amazonaws.com:5342/dating_app
+spring.datasource.username=employee
+spring.datasource.password=password
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.show-sql=false
+spring.jpa.hibernate.ddl-auto=create

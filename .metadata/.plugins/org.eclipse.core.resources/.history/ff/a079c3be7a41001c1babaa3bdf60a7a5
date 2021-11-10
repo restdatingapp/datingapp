@@ -1,0 +1,3 @@
+spring:
+datasource:
+url:emansrevdatabases.cltgn8pt9grc.us-east-2.rds.amazonaws.com
