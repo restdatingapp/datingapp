@@ -15,7 +15,8 @@ interface UserSignup{
     email: string,
     nickname: string,
     password: string
-    Gender: object;
+    gender: object,
+    interestedgender: object;
 }
 
 
@@ -32,7 +33,9 @@ export const loginUser = (user:UserLogin) => async (dispatch:any) => {
             lastname: res.data.lastname,
             email: res.data.email,
             nickname: res.data.nickname,
-            password: res.data.password
+            password: res.data.password,
+            gender: res.data.gender.id,
+            interested: res.data.interested
 
         }
 
@@ -49,7 +52,10 @@ export const loginUser = (user:UserLogin) => async (dispatch:any) => {
             lastname: '',
             email: '',
             nickname: '',
-            password: ''
+            password: '',
+            gender: {id: 0, type: ''},
+            interested: {id: 0, type: ''}
+
         }
 
         return dispatch({
