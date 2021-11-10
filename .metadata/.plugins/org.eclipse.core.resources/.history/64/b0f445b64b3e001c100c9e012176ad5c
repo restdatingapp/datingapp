@@ -1,0 +1,5 @@
+package com.datingappspringboot.controller;
+
+public class UserController {
+
+}

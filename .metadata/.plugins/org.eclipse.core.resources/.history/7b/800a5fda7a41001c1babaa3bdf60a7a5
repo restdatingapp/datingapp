@@ -1,0 +1,6 @@
+spring:
+datasource:
+url:emansrevdatabases.cltgn8pt9grc.us-east-2.rds.amazonaws.com
+username:employee
+password:password
+driver-class-name:org.postgresql.Driver

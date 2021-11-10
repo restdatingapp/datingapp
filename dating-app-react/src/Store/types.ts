@@ -4,7 +4,9 @@ export interface IUser{
     lastname: string,
     email: string,
     nickname: string,
-    password: string
+    password: string,
+    gender: object,
+    interested: object
 }
 
 export type AppState = {

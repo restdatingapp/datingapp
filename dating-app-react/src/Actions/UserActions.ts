@@ -8,10 +8,6 @@ interface UserLogin{
     password: string
 }
 
-interface gender{
-    id: number,
-    gender: string
-}
 
 interface UserSignup{
     firstname: string,
@@ -19,12 +15,10 @@ interface UserSignup{
     email: string,
     nickname: string,
     password: string
-    gender: gender;
+    gender: object,
+    interestedgender: object;
 }
 
-export const buildGender = (gender:gender) =>{
-    
-}
 
 export const loginUser = (user:UserLogin) => async (dispatch:any) => {
     let loggedIn: IUser;
@@ -39,7 +33,9 @@ export const loginUser = (user:UserLogin) => async (dispatch:any) => {
             lastname: res.data.lastname,
             email: res.data.email,
             nickname: res.data.nickname,
-            password: res.data.password
+            password: res.data.password,
+            gender: res.data.gender.id,
+            interested: res.data.interested
 
         }
 
@@ -56,7 +52,10 @@ export const loginUser = (user:UserLogin) => async (dispatch:any) => {
             lastname: '',
             email: '',
             nickname: '',
-            password: ''
+            password: '',
+            gender: {id: 0, type: ''},
+            interested: {id: 0, type: ''}
+
         }
 
         return dispatch({
@@ -67,7 +66,7 @@ export const loginUser = (user:UserLogin) => async (dispatch:any) => {
 }
 
 export const signupUser = (user:UserSignup) => async (dispatch:any) => {
-    let signedIn : IUser;
+
 
     try{
         const res = await axios.post('http://localhost:8080/user/create', user);

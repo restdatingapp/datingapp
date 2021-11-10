@@ -21,7 +21,7 @@ export const Login: React.FC<any> = () => {
 
     useEffect(() => {
         if (appState.user.id > 0) {
-            navigate('home');
+            navigate('../home');
         }
     }, [appState]);
 

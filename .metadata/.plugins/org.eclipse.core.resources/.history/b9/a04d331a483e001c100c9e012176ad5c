@@ -1,0 +1,7 @@
+package com.datingappspringboot.repository;
+
+
+@Repository
+public interface UserRepo {
+
+}

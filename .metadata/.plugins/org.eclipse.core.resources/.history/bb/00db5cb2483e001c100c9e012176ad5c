@@ -1,0 +1,5 @@
+package com.datingappspringboot.service;
+
+public class SpringBootApplication {
+
+}
