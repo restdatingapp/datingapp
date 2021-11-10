@@ -9,7 +9,7 @@ let initialState: IUser = {
     nickname: '',
     password: '',
     gender: {id: 0, type: ''},
-    interested: {id: 0, type: ''}
+    interestedgender: {id: 0, type: ''}
 };
 
 type Action = {type: string, payload: IUser};

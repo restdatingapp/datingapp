@@ -1,7 +1,9 @@
 import axios from 'axios';
 import { RSA_NO_PADDING } from 'constants';
+import Reducers from '../Reducers/reducer';
 import { IUser } from '../Store/types';
 import { LOGIN_USER } from './ActionTypes';
+import {userReducer} from '../Reducers/UserReducer';
 
 interface UserLogin{
     nickname: string,
@@ -35,7 +37,7 @@ export const loginUser = (user:UserLogin) => async (dispatch:any) => {
             nickname: res.data.nickname,
             password: res.data.password,
             gender: res.data.gender.id,
-            interested: res.data.interested
+            interestedgender: res.data.interestedgender.id
 
         }
 
@@ -54,7 +56,7 @@ export const loginUser = (user:UserLogin) => async (dispatch:any) => {
             nickname: '',
             password: '',
             gender: {id: 0, type: ''},
-            interested: {id: 0, type: ''}
+            interestedgender: {id: 0, type: ''}
 
         }
 

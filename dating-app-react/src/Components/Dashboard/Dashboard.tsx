@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Cards } from '../Cards/cards';
 
 
 export const Dashboard:React.FC<any>=(props:any)=>{
@@ -153,6 +153,7 @@ export const Dashboard:React.FC<any>=(props:any)=>{
         </div>
     </div>
 
+    <Cards></Cards>
         </>
     )
 }
