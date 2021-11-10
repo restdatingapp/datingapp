@@ -33,6 +33,21 @@ public class UserController {
 		return uServ.getAllUser();
 	}
 
+	
+	//Lets see if we can get these folks some dates
+	@PostMapping(value="/dashboard")
+	public List<User>getDates(@RequestBody User u){
+		System.out.println("In dashboard controller");
+		try {
+		return uServ.getDates(u);
+		}catch(Exception e) {
+			System.out.println("We have an error");
+			return null;
+		}
+	}
+	
+	
+	
 	@PostMapping(value = "/login")
 	public User getUserEmail(@RequestBody User u) {
 		System.out.println(u.getNickname());

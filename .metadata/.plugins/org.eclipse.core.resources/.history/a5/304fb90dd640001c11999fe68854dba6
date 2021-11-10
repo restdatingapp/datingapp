@@ -1,0 +1,50 @@
+package com.datingappspringboot.models;
+
+import java.sql.Date;
+
+public class Likes {
+	
+	private int id;
+	private int likeGiver;
+	private int likeReceiver;
+	private Date timeStamp;
+	
+	
+	
+	public Likes(int likeGiver, int likeReceiver) {
+		super();
+		this.likeGiver = likeGiver;
+		this.likeReceiver = likeReceiver;
+	}
+	
+	
+	
+	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getLikeGiver() {
+		return likeGiver;
+	}
+	public void setLikeGiver(int likeGiver) {
+		this.likeGiver = likeGiver;
+	}
+	public int getLikeReceiver() {
+		return likeReceiver;
+	}
+	public void setLikeReceiver(int likeReceiver) {
+		this.likeReceiver = likeReceiver;
+	}
+	public Date getTimeStamp() {
+		return timeStamp;
+	}
+	public void setTimeStamp(Date timeStamp) {
+		this.timeStamp = timeStamp;
+	}
+	
+
+}

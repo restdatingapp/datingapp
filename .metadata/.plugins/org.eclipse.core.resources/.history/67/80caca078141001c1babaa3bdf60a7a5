@@ -1,0 +1,11 @@
+spring:
+ datasource:
+    url: jdbc:postgresql://emansrevdatabases.cltgn8pt9grc.us-east-2.rds.amazonaws.com/reimbursementdb
+    username: employee
+    password: password
+    driver-class-name: org.postgresql.Driver
+ jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+    hibernate:
+      ddl-auto: create

@@ -1,0 +1,17 @@
+package com.microservices.service;
+
+import org.springframework.stereotype.Service;
+
+import com.microservices.repo.UserRepo;
+
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@Service
+@NoArgsConstructor
+@AllArgsConstructor(onConstructor=@__(@Autowired))
+public class UserService {
+private UserRepo uDao;
+	
+	
+}
