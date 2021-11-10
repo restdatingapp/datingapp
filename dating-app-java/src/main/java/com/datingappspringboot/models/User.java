@@ -1,7 +1,8 @@
 package com.datingappspringboot.models;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -17,6 +18,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.NamedQueries;
 import org.hibernate.annotations.NamedQuery;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "users")
@@ -40,32 +43,43 @@ public class User {
 	@Column(name = "nickname", nullable = false)
 	private String nickname;
 
-	@ManyToOne(cascade = CascadeType.MERGE)
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "gender_id")
+	@JsonIgnore
 	private Gender gender;
 
-	@ManyToOne(cascade = CascadeType.MERGE)
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "interested_gender")
+	@JsonIgnore
 	private Gender interestedgender;
 
+	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "likes", joinColumns = {
 
 			@JoinColumn(name = "likeeid", referencedColumnName = "userid", nullable = false) }, inverseJoinColumns = {
 
-					@JoinColumn(name = "liked", referencedColumnName = "userid", nullable = false) })
+					@JoinColumn(name = "likedid", referencedColumnName = "userid", nullable = false) })
 
-	@ManyToMany
-	private List<User> likeelist = new ArrayList<User>();
+	@JsonIgnore
+	private Set<User> likeelist = new HashSet<User>();
 
-	@ManyToMany(mappedBy = "likeelist")
-	private List<User> likedlist = new ArrayList<User>();
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "likes", joinColumns = {
+			@JoinColumn(name = "likedid", referencedColumnName = "userid", nullable = false) }, inverseJoinColumns = {
+					@JoinColumn(name = "likeeid", referencedColumnName = "userid", nullable = false) })
+	@JsonIgnore
+	private Set<User> likedlist = new HashSet<User>();
+	
+	
+	
+	
 
 	public User() {
 		super();
 	}
 
 	public User(int id, String firstname, String lastname, String email, String password, String description,
-			String nickname, Gender gender, Gender interestedgender) {
+			String nickname, Gender gender, Gender interestedgender, Set<User> l1, Set<User> l2) {
 
 		super();
 		this.id = id;
@@ -77,10 +91,12 @@ public class User {
 		this.nickname = nickname;
 		this.gender = gender;
 		this.interestedgender = interestedgender;
+		this.likeelist = l1;
+		this.likedlist = l2;
 	}
 
 	public User(String firstname, String lastname, String email, String password, String description, String nickname,
-			Gender gender, Gender interestedgender) {
+			Gender gender, Gender interestedgender, Set<User> l1, Set<User> l2) {
 		super();
 		this.firstname = firstname;
 		this.lastname = lastname;
@@ -90,6 +106,8 @@ public class User {
 		this.nickname = nickname;
 		this.gender = gender;
 		this.interestedgender = interestedgender;
+		this.likeelist = l1;
+		this.likedlist = l2;
 	}
 
 	public String getDescription() {
@@ -164,19 +182,19 @@ public class User {
 		this.interestedgender = interestedgender;
 	}
 
-	public List<User> getLikeelist() {
+	public Set<User> getLikeelist() {
 		return likeelist;
 	}
 
-	public void setLikeelist(List<User> likeelist) {
+	public void setLikeelist(Set<User> likeelist) {
 		this.likeelist = likeelist;
 	}
 
-	public List<User> getLikedlist() {
+	public Set<User> getLikedlist() {
 		return likedlist;
 	}
 
-	public void setLikedlist(List<User> likedlist) {
+	public void setLikedlist(Set<User> likedlist) {
 		this.likedlist = likedlist;
 	}
 
