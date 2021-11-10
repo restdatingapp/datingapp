@@ -16,8 +16,8 @@ export const Dashboard:React.FC<any>=(props:any)=>{
                 <div className="row display-table-row">
                     <div className="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
                         <div className="logo">
-                            <a href="home.html"><img src="http://jskrishna.com/work/merkury/images/logo.png" alt="merkery_logo" className="hidden-xs hidden-sm" />
-                                <img src="http://jskrishna.com/work/merkury/images/circle-logo.png" alt="merkery_logo" className="visible-xs visible-sm circle-logo" />
+                            <a href="">
+                                <img src=".\src\Components\Dashboard\heart.jpg" alt="" className="pp" />
                             </a>
                         </div>
                         <DNavigation />

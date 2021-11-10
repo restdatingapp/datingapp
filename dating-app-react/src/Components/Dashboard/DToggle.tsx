@@ -12,7 +12,6 @@ export const DToggle: React.FC<any> = (props: any) => {
         <>
 
             <div className="col-md-10 col-sm-11 display-table-cell v-align">
-                <button type="button" className="slide-toggle">Slide Toggle</button>
                 <div className="row">
                     <header>
                         <div className="col-md-7">
@@ -35,14 +34,16 @@ export const DToggle: React.FC<any> = (props: any) => {
                                 <ul className="list-inline header-top pull-right">
                                     <li className="hidden-xs"><a href="#" className="add-project" data-toggle="modal" data-target="#add_project">Add Project</a></li>
                                     <li><a href="#"><i className="fa fa-envelope" aria-hidden="true"></i></a></li>
+                                    <li></li>
                                     <li>
                                         <a href="#" className="icon-info">
                                             <i className="fa fa-bell" aria-hidden="true"></i>
                                             <span className="label label-primary">3</span>
                                         </a>
                                     </li>
+                                    <li></li>
                                     <li className="dropdown">
-                                        <a href="#" className="dropdown-toggle" data-toggle="dropdown"><img src="http://jskrishna.com/work/merkury/images/user-pic.jpg" alt="user" />
+                                        <a href="#" className="dropdown-toggle" data-toggle="dropdown">
                                             <b className="caret"></b></a>
 
                                         <ul className="dropdown-menu">

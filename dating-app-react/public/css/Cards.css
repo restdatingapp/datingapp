@@ -1,6 +1,6 @@
 :root {
-    --primary: #FFCE00;
-    --secondary: #FE4880;
+    --primary: #4fe2e7;
+    --secondary: #08073b;
     --dark: #212121;
     --light: #F3F3F3;
   }
@@ -56,7 +56,7 @@
   }
   
   .card__face--front h2 {
-    color: #FFF;
+    color: rgb(255, 255, 255);
     font-size: 32px;
   }
   
@@ -100,7 +100,7 @@
   }
   
   .card__header h2 {
-    color: #FFF;
+    color: rgb(233, 220, 220);
     font-size: 32px;
     font-weight: 900;
     text-transform: uppercase;
@@ -109,17 +109,18 @@
   
   .card__body {
     padding: 30px;
+    
   }
   
   .card__body h3 {
-    color: var(--dark);
-    font-size: 24px;
+    color: var(--light);
+    font-size: 34px;
     font-weight: 600;
     margin-bottom: 15px;
   }
   
   .card__body p {
-    color: var(--dark);
+    color: var(--light);
     font-size: 18px;
     line-height: 1.4;
   }
