@@ -11,7 +11,9 @@ const initialState:AppState = {
         lastname: "",
         email: "",
         nickname: "",
-        password: ""
+        password: "",
+        gender: {id: 0, type: ''},
+        interested: {id: 0, type: ''}
     }
 }
 

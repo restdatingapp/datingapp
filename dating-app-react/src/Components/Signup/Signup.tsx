@@ -7,6 +7,7 @@ import { signupUser } from '../../Actions/UserActions';
 import ReactDOM from 'react-dom';
 import { IUser } from '../../Store/types';
 import { stringify } from 'querystring';
+import { IntersectionTypeNode } from 'typescript';
 
 export const Signup: React.FC<any> = () => {
 
@@ -21,14 +22,29 @@ export const Signup: React.FC<any> = () => {
     const [email, setEmail] = useState("");
     const [nickname, setNickname] = useState("");
     const [password, setPassword] = useState("");
-    const [genderid, setId] = useState(1);
-    const [gendertype, setGender] = useState("male")
+    const [gender, setGender] = useState({id: 1, type:'male'});
+    const [interested, setInterested] = useState({id: 1, type:'male'});
+    
+    var deconstructedgid = gender.id;
+    var deconstructedgtype = gender.type;
+    var deconstructediid = interested.id;
+    var deconstructeditype = interested.type;
 
     useEffect(() => {
         if (appState.user.id > 0) {
             navigate('home');
         }
     }, [appState]);
+
+    useEffect(() => {
+        genderBuilder(gender.type);
+        console.log("Inside of the useEffect");
+        interestedBuilder(interested.type);
+        deconstructedgid = gender.id;
+        deconstructedgtype = gender.type;
+        deconstructediid = interested.id;
+        deconstructeditype = interested.type;
+    }, [gender.type, interested.type])
 
     const handleChange = (event: any) => {
         switch (event.target.name) {
@@ -50,48 +66,76 @@ export const Signup: React.FC<any> = () => {
                 break;
 
             case "gender":
-                setGender(event.target.value);
-                console.log(gendertype);
+                setGender({id: 1, type: event.target.value});
+                break;
+            
+            case "interestedIn":
+                setInterested({id: 1, type: event.target.value});
                 break;
         }
     }
 
-    var genderBuilder = (gendertype: any): object | void => {
+    var genderBuilder = (gendertype: string) => {
+
+        console.log(gendertype);
 
         if (gendertype == 'male') {
-                setId(1);
-                setGender('male')
+                setGender({id: 1, type: 'male'});
+                return gender;
         } else if (gendertype == 'female') {
-                setId(2);
-                setGender('female')
+                setGender({id: 2, type: 'female'});
+                return gender;
         } else if (gendertype == 'non-binary') {
-                setId(3);
-                setGender('non-binary')
+                setGender({id: 3, type: 'non-binary'});
+                return gender;
         } else if (gendertype == 'doNotDisclose') {
-                setId(4);
-                setGender('do not disclose')
+                setGender({id: 4, type: 'do not disclose'});
+                return gender;
+        } else{
+            console.log("no results matched");
         }
     }
+
+    var interestedBuilder = (interestedtype: string) => {
+            console.log(interestedtype);
+        if (interestedtype == 'male') {
+                setInterested({id: 1, type: 'male'})
+                return interested.type;
+        } else if (interestedtype == 'female') {
+                setInterested({id: 2, type: 'female'})
+                return interested.type;
+        } else if (interestedtype == 'both') {
+                setInterested({id: 3, type: 'both'})
+                return interested.type;
+        } else{
+            console.log("no results matched");
+        }
+    }
+
 
 
 const signup = async (e: any) => {
     e.preventDefault();
 
-    
-    genderBuilder(gendertype);
 
-    let Gender:object;
-    Gender = {
-        id: genderid,
-        gender: gendertype
+    let gender:object;
+    gender = {
+        id : deconstructedgid,
+        type: deconstructedgtype
     }
-    console.log(Gender);
-    console.log("firing signup async");
-    await dispatch(
-        signupUser({ firstname, lastname, email, nickname, password, Gender })
-    )
-    navigate('../login')
+    
+    let interestedgender:object;
+    interestedgender = {
+        id: deconstructediid,
+        type : deconstructeditype
+    }
+    console.log(gender);
+    console.log(interestedgender);
 
+    await dispatch(
+        signupUser({ firstname, lastname, email, nickname, password, gender, interestedgender})
+    );
+    navigate('../login');
 }
 
 
@@ -129,7 +173,7 @@ return (
                 <br />
                 <br />
                 <label>Interested in:</label>
-                <select name='interestedIn'>
+                <select name='interestedIn' onChange={handleChange}>
                     <option value='male'>male</option>
                     <option value='female'>female</option>
                     <option value='both'>both</option>
