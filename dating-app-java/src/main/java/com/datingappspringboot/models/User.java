@@ -1,5 +1,6 @@
 package com.datingappspringboot.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -19,7 +20,6 @@ import org.hibernate.annotations.NamedQuery;
 
 @Entity
 @Table(name = "users")
-
 
 public class User {
 	@Id
@@ -48,10 +48,21 @@ public class User {
 	@JoinColumn(name = "interested_gender")
 	private Gender interestedgender;
 
+	@JoinTable(name = "likes", joinColumns = {
+
+			@JoinColumn(name = "likeeid", referencedColumnName = "userid", nullable = false) }, inverseJoinColumns = {
+
+					@JoinColumn(name = "liked", referencedColumnName = "userid", nullable = false) })
+
+	@ManyToMany
+	private List<User> likeelist = new ArrayList<User>();
+
+	@ManyToMany(mappedBy = "likeelist")
+	private List<User> likedlist = new ArrayList<User>();
+
 	public User() {
 		super();
 	}
-
 
 	public User(int id, String firstname, String lastname, String email, String password, String description,
 			String nickname, Gender gender, Gender interestedgender) {
@@ -151,6 +162,22 @@ public class User {
 
 	public void setInterestedgender(Gender interestedgender) {
 		this.interestedgender = interestedgender;
+	}
+
+	public List<User> getLikeelist() {
+		return likeelist;
+	}
+
+	public void setLikeelist(List<User> likeelist) {
+		this.likeelist = likeelist;
+	}
+
+	public List<User> getLikedlist() {
+		return likedlist;
+	}
+
+	public void setLikedlist(List<User> likedlist) {
+		this.likedlist = likedlist;
 	}
 
 	@Override
