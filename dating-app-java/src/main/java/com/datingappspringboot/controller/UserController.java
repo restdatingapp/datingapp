@@ -35,6 +35,7 @@ public class UserController {
 
 	@PostMapping(value = "/login")
 	public User getUserEmail(@RequestBody User u) {
+		System.out.println("I'm getting your request!");
 		System.out.println(u.getNickname());
 		System.out.println(u.getPassword());
 		try {

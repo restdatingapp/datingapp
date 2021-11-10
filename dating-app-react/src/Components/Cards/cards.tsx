@@ -1,6 +1,14 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { store } from '../../Store/store';
+
 
 export const Cards:React.FC<any>=(props:any)=>{
+	const state = store.getState();
+	const firstname = state.user.firstname;
+	const appState = useSelector<any, any>((state) => state);
+	console.log(appState);
+	console.log("firstname is: " + firstname);
     return(
         <>
         <div className="card">

@@ -1,6 +1,6 @@
 import {applyMiddleware, createStore} from 'redux';
 import thunk from 'redux-thunk';
-import reducer from '../Reducers';
+import reducer from '../Reducers/reducer';
 
 import { AppState } from './types';
 
@@ -13,7 +13,7 @@ const initialState:AppState = {
         nickname: "",
         password: "",
         gender: {id: 0, type: ''},
-        interested: {id: 0, type: ''}
+        interestedgender: {id: 0, type: ''}
     }
 }
 

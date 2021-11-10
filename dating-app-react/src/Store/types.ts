@@ -6,7 +6,7 @@ export interface IUser{
     nickname: string,
     password: string,
     gender: object,
-    interested: object
+    interestedgender: object
 }
 
 export type AppState = {

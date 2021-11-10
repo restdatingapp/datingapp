@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
 import { loginUser } from '../../Actions/UserActions';
@@ -21,7 +21,7 @@ export const Login: React.FC<any> = () => {
 
     useEffect(() => {
         if (appState.user.id > 0) {
-            navigate('../home');
+            navigate('../dashboard');
         }
     }, [appState]);
 
