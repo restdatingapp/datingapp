@@ -21,6 +21,10 @@ interface UserSignup{
     interestedgender: object;
 }
 
+interface getInterested{
+    id: number,
+    interestedgender: object
+}
 
 export const loginUser = (user:UserLogin) => async (dispatch:any) => {
     let loggedIn: IUser;
@@ -78,4 +82,14 @@ export const signupUser = (user:UserSignup) => async (dispatch:any) => {
         console.log(e);
     }
 
+}
+
+export const getDates = (user:getInterested) => async (dispatch:any) => {
+
+    try{
+        const res = await axios.post('http://localhost:8080/user/dashboard', user)
+        console.log(res.data);
+    }catch(e){
+        console.log(e);
+    }
 }
