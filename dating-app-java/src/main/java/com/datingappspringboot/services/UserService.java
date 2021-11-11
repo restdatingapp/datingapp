@@ -96,6 +96,8 @@ public class UserService {
 		return uDao.findById(id).get();
 	}
 	
-
+public User updateUser(User u) {
+		return uDao.save(u);
+	}
 
 }
