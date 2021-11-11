@@ -88,4 +88,20 @@ public class UserController {
 		return uServ.createUser(u);
 	}
 
+	
+	@PostMapping(value = "/addlike")
+	public ResponseEntity<User> createUser(@RequestBody LinkedHashMap<String, String> u) {
+	
+		System.out.println(u);
+		
+		   
+		User user = uServ.getUserById(Integer.parseInt(u.get("userid")));
+		User user2 = uServ.getUserById(Integer.parseInt(u.get("likeid")));
+		
+	 boolean b = user.getLikeelist().add(user2);
+	 
+		 
+		 return new ResponseEntity<User>(uServ.updateUser(user), HttpStatus.ACCEPTED);
+
+	}
 }
