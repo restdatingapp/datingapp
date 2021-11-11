@@ -106,6 +106,12 @@ public class UserController {
 	 
 		 
 		 return new ResponseEntity<User>(uServ.updateUser(user), HttpStatus.ACCEPTED);
-
 	}
+	
+		@PostMapping(value = "/update")
+	public User updateUser(@RequestBody User u) {
+		System.out.println(u);
+		return uServ.updateUser(u);
+	}
+
 }
