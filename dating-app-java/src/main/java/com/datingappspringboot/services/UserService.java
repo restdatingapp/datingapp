@@ -58,11 +58,9 @@ public class UserService {
 	//a list of users that matches interested in genders
 
 	public List<User>getDates(User u){
-		int userId = u.getId();
-		int interestedgender = u.getInterestedgender().getId();
-		System.out.println("This user is interested in: " +interestedgender);
-		System.out.println("This user's Id is: " + userId);
-	return  uDao.getDates(userId, interestedgender);
+		System.out.println("This user is interested in: ");
+		System.out.println("This user's Id is: ");
+	return  uDao.getDates(u.getId(), u.getInterestedgender().getId());
 		
 		
 	}

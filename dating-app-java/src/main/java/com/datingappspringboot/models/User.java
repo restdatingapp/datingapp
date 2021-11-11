@@ -45,12 +45,10 @@ public class User {
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "gender_id")
-	@JsonIgnore
 	private Gender gender;
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "interested_gender")
-	@JsonIgnore
 	private Gender interestedgender;
 
 	@ManyToMany(cascade = CascadeType.ALL)

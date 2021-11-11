@@ -1,5 +1,6 @@
 package com.datingappspringboot.controller;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.datingappspringboot.exceptions.UserDoesNotExistException;
@@ -37,10 +39,12 @@ public class UserController {
 	//Lets see if we can get these folks some dates
 	@PostMapping(value="/dashboard")
 	public List<User>getDates(@RequestBody User u){
+		System.out.println(u);
 		System.out.println("In dashboard controller");
 		try {
 		return uServ.getDates(u);
 		}catch(Exception e) {
+			e.printStackTrace();
 			System.out.println("We have an error");
 			return null;
 		}
