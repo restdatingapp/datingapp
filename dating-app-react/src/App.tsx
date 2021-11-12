@@ -8,7 +8,9 @@ import "./App.css";
 import { Home } from './Components/Home/Home';
 import { Dashboard } from './Components/Dashboard/Dashboard';
 import { Cards } from './Components/Cards/cards';
-import ImgUpload from './Components/ImgUpload/ImgUpload';
+import ImgUpload from './Components/ImgUpload/ImgUpload'
+
+require('dotenv').config()
 
 function App() {
   return (
