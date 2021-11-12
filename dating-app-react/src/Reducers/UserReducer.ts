@@ -1,4 +1,4 @@
-import { IUser } from "../Store/types";
+import {IUser, IInterested} from "../Store/types";
 import { LOGIN_USER } from "../Actions/ActionTypes";
 
 let initialState: IUser = {
@@ -12,6 +12,9 @@ let initialState: IUser = {
     interestedgender: {id: 0, type: ''}
 };
 
+let initialInterested: IInterested[];
+
+
 type Action = {type: string, payload: IUser};
 
 export const userReducer = (state: IUser = initialState, action:Action) => {
@@ -23,7 +26,8 @@ export const userReducer = (state: IUser = initialState, action:Action) => {
             return {
                 ...initialState
             }
-            default:
-                return state;
+
+        default:
+            return state;
     }
 }

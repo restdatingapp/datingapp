@@ -43,11 +43,11 @@ public class User {
 	@Column(name = "nickname", nullable = false)
 	private String nickname;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "gender_id")
 	private Gender gender;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "interested_gender")
 	private Gender interestedgender;
 
@@ -74,6 +74,21 @@ public class User {
 
 	public User() {
 		super();
+	}
+	
+	public User(int id, String firstname, String lastname, String email, String password, String description,
+			String nickname, Gender gender, Gender interestedgender) {
+
+		super();
+		this.id = id;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		this.password = password;
+		this.description = description;
+		this.nickname = nickname;
+		this.gender = gender;
+		this.interestedgender = interestedgender;
 	}
 
 	public User(int id, String firstname, String lastname, String email, String password, String description,

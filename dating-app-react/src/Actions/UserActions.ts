@@ -21,10 +21,6 @@ interface UserSignup{
     interestedgender: object;
 }
 
-interface getInterested{
-    id: number,
-    interestedgender: object
-}
 
 export const loginUser = (user:UserLogin) => async (dispatch:any) => {
     let loggedIn: IUser;
@@ -84,12 +80,12 @@ export const signupUser = (user:UserSignup) => async (dispatch:any) => {
 
 }
 
-export const getDates = (user:getInterested) => async (dispatch:any) => {
+export const UpdateUser = (user:UserSignup) => async (dispatch:any) => {
 
-    try{
-        const res = await axios.post('http://localhost:8080/user/dashboard', user)
+    try{   
+        const res = await axios.post('http://ec2-54-177-228-183.us-west-1.compute.amazonaws.com:8080/user/update', user);
         console.log(res.data);
-    }catch(e){
+    } catch(e){
         console.log(e);
     }
 }

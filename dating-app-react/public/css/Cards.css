@@ -20,6 +20,7 @@ body {
   perspective: 1000px;
 }
 .card__inner {
+
   width: 100%;
   height: 100%;
   transition: transform 1s;
@@ -80,8 +81,9 @@ body {
   height: 128px;
   margin: 0 auto 30px;
   border-radius: 50%;
-  background-color: #FFF;
-  border: 5px solid #FFF;
+  background-color: #5C1857;
+  border-style: solid;
+  border-color: #000000;
   object-fit: cover;
 }
 .card__header h2 {

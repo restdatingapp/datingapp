@@ -14,7 +14,8 @@ const initialState:AppState = {
         password: "",
         gender: {id: 0, type: ''},
         interestedgender: {id: 0, type: ''}
-    }
+    },
+    interested : []
 }
 
 const middleWare = [thunk];
