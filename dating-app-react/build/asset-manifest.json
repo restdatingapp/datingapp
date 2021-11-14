@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.a988c277.chunk.css",
-    "main.js": "/static/js/main.b21eac8c.chunk.js",
-    "main.js.map": "/static/js/main.b21eac8c.chunk.js.map",
+    "main.css": "/static/css/main.45eedadd.chunk.css",
+    "main.js": "/static/js/main.627d0815.chunk.js",
+    "main.js.map": "/static/js/main.627d0815.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.9b1394f6.js",
     "runtime-main.js.map": "/static/js/runtime-main.9b1394f6.js.map",
     "static/js/2.a58bb37f.chunk.js": "/static/js/2.a58bb37f.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.96437ef2.chunk.js": "/static/js/3.96437ef2.chunk.js",
     "static/js/3.96437ef2.chunk.js.map": "/static/js/3.96437ef2.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.a988c277.chunk.css.map": "/static/css/main.a988c277.chunk.css.map",
+    "static/css/main.45eedadd.chunk.css.map": "/static/css/main.45eedadd.chunk.css.map",
     "static/js/2.a58bb37f.chunk.js.LICENSE.txt": "/static/js/2.a58bb37f.chunk.js.LICENSE.txt",
     "static/media/restLogo.2a8f21aa.png": "/static/media/restLogo.2a8f21aa.png"
   },
   "entrypoints": [
     "static/js/runtime-main.9b1394f6.js",
     "static/js/2.a58bb37f.chunk.js",
-    "static/css/main.a988c277.chunk.css",
-    "static/js/main.b21eac8c.chunk.js"
+    "static/css/main.45eedadd.chunk.css",
+    "static/js/main.627d0815.chunk.js"
   ]
 }
