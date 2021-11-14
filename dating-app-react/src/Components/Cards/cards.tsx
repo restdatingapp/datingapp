@@ -5,7 +5,7 @@ import prettylady from './prettylady.jpg'
 import { getDates } from '../../Actions/InterestedActions'
 export const Cards: React.FC<any> = (props: any) => {
 
-
+    const photoDefaultPath = "https://restdating.s3.us-west-1.amazonaws.com/";
     const dispatch = useDispatch();
 
     //user information - local state
@@ -17,6 +17,7 @@ export const Cards: React.FC<any> = (props: any) => {
     const password = useSelector<any, any>((state) => state.user.password);
     const gender = useSelector<any, any>((state) => state.user.gender);
     const interestedgender = useSelector<any, any>((state) => state.user.interestedgender);
+    const photourl = useSelector<any, any>((state) => state.user.photourl);
 
 
     //dates information - local state
@@ -40,7 +41,7 @@ export const Cards: React.FC<any> = (props: any) => {
 
     const deconstructed = {
         id,
-        interestedgender: { id: 2, type: genderType }
+        interestedgender: { id: interestedgender, type: genderType }
     }
 
     const dates = async () => {
@@ -68,7 +69,7 @@ export const Cards: React.FC<any> = (props: any) => {
                 <div className="card">
                     <div className="card__inner">
                         <div className="card__face card__face--front">
-                            <div className="card__header"><img src={prettylady} alt="" className="pp" /><h2>{interested.firstname} {interested.lastname}</h2>
+                            <div className="card__header"><img src={photoDefaultPath + interested.photourl} alt="" className="pp" /><h2>{interested.firstname} {interested.lastname}</h2>
                                 <div className="card__body">
                                     <h3 >Description:</h3>
                                     <p>{interested.description}</p>

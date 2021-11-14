@@ -13,7 +13,8 @@ const initialState:AppState = {
         nickname: "",
         password: "",
         gender: {id: 0, type: ''},
-        interestedgender: {id: 0, type: ''}
+        interestedgender: {id: 0, type: ''},
+        photourl: ''
     },
     interested : []
 }

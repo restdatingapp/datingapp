@@ -6,7 +6,8 @@ export interface IUser{
     nickname: string,
     password: string,
     gender: object,
-    interestedgender: object
+    interestedgender: object,
+    photourl: string
 }
 
 export interface IInterested{
@@ -22,6 +23,6 @@ export interface IInterested{
 }
 
 export type AppState = {
-    user: IUser,
+    user: any,
     interested: any
 }
