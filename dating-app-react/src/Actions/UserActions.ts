@@ -35,7 +35,7 @@ interface UserUpdate{
 export const photoUser = (user:IUser) => async (dispatch:any) =>{
     let updated: IUser;
     try{   
-        const res = await axios.post('http://localhost:8080/user/updatephoto', user);
+        const res = await axios.post('http://ec2-54-177-228-183.us-west-1.compute.amazonaws.com:8080/user/updatephoto', user);
 
         updated = {
             id: res.data.id,
@@ -65,7 +65,7 @@ export const loginUser = (user:UserLogin) => async (dispatch:any) => {
     let loggedIn: IUser;
 
     try{
-        const res = await axios.post('http://localhost:8080/user/login', user);
+        const res = await axios.post('http://ec2-54-177-228-183.us-west-1.compute.amazonaws.com:8080/user/login', user);
         console.log(res.data)
 
         loggedIn = {
@@ -111,7 +111,7 @@ export const signupUser = (user:UserSignup) => async () => {
 
     try{
         console.log(user);
-        const res = await axios.post('http://localhost:8080/user/create', user);
+        const res = await axios.post('http://ec2-54-177-228-183.us-west-1.compute.amazonaws.com:8080/user/create', user);
         console.log(res.data);
 
     } catch(e){
@@ -123,7 +123,7 @@ export const signupUser = (user:UserSignup) => async () => {
 export const UpdateUser = (user:UserUpdate) => async (dispatch:any) => {
     let updated: IUser;
     try{   
-        const res = await axios.post('http://localhost:8080/user/update', user);
+        const res = await axios.post('http://ec2-54-177-228-183.us-west-1.compute.amazonaws.com:8080/user/update', user);
 
         updated = {
             id: res.data.id,
