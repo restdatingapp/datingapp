@@ -60,7 +60,6 @@ export const Cards: React.FC<any> = (props: any) => {
         console.log("Second use effect firing.");
     }, [genderType]);
 
-
     return (
         <>
 

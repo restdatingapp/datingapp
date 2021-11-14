@@ -43,6 +43,7 @@ root {
     flex: 1;
     width: 200px;
     height: 154px;
+    cursor:pointer;
 }
   .card__inner.is-flipped {
     transform: rotateY(180deg);

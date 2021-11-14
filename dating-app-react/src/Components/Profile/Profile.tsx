@@ -14,6 +14,7 @@ export const Profile: React.FC<any> = (props: any) => {
     const photoDefaultPath = "https://restdating.s3.us-west-1.amazonaws.com/";
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const id = useSelector<any, any>((state) => state.user.id);
     const storefirstname = useSelector<any, any>((state) => state.user.firstname);
@@ -37,6 +38,7 @@ export const Profile: React.FC<any> = (props: any) => {
 
     useEffect(() => {
         console.log("Store updated!");
+        
     }, [storephotourl]);
 
     const handleChange = (event: any) => {
@@ -72,12 +74,15 @@ export const Profile: React.FC<any> = (props: any) => {
             UpdateUser({ id, firstname, lastname, email, nickname, password})
         )
     }
+    console.log(photoDefaultPath + storephotourl);
 
-
+    const handleClick = (event:any) => {
+        navigate('../dashboard');
+    }
 
     return (
         <>
-        <img src = {restLogo} className='logo' />
+        <img src = {restLogo} className='logo' onClick = {handleClick}/>
             <div className="card">
                 
                 <div className="card__inner">
