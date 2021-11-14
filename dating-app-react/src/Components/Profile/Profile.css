@@ -17,6 +17,7 @@ root {
   }
   .card {
     margin: 100px auto 0;
+    margin-top: 10px;
     width: 800px;
     height: 600px;
     perspective: 1000px;
@@ -29,6 +30,20 @@ root {
     cursor: pointer;
     position: relative;
   }
+
+  .fileUploadDiv span{
+    color:beige; 
+  }
+  
+  label{
+    color:beige;
+  }
+  .logo {
+    border-radius: 11%;
+    flex: 1;
+    width: 200px;
+    height: 154px;
+}
   .card__inner.is-flipped {
     transform: rotateY(180deg);
   }
@@ -43,7 +58,7 @@ root {
     box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
   }
   .card__face--front {
-    background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
+    background-color:#3b0c35;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,7 +68,7 @@ root {
     font-size: 32px;
   }
   .card__face--back {
-    background-color: var(--light);
+    background-color: #F3F3F3;
     transform: rotateY(180deg);
   }
   .card__content {
@@ -72,7 +87,7 @@ root {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: linear-gradient(to bottom left, var(--primary) 10%, var(--secondary) 115%);
+    background-image: linear-gradient(to bottom left, #3b0c35 10%, #811566 115%);
     z-index: -1;
     border-radius: 0px 0px 50% 0px;
   }
@@ -96,13 +111,13 @@ root {
     padding: 30px;
   }
   .card__body h3 {
-    color: var(--light);
+    color: #F3F3F3;
     font-size: 34px;
     font-weight: 600;
     margin-bottom: 15px;
   }
   .card__body p {
-    color: var(--light);
+    color: #F3F3F3;
     font-size: 18px;
     line-height: 1.4;
   }

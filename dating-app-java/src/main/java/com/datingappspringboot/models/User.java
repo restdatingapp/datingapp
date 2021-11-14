@@ -42,6 +42,8 @@ public class User {
 	private String description;
 	@Column(name = "nickname", nullable = false)
 	private String nickname;
+	@Column(name = "photo_url")
+	private String photourl;
 
 	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "gender_id")
@@ -77,7 +79,7 @@ public class User {
 	}
 	
 	public User(int id, String firstname, String lastname, String email, String password, String description,
-			String nickname, Gender gender, Gender interestedgender) {
+			String nickname, String photourl, Gender gender, Gender interestedgender) {
 
 		super();
 		this.id = id;
@@ -89,6 +91,7 @@ public class User {
 		this.nickname = nickname;
 		this.gender = gender;
 		this.interestedgender = interestedgender;
+		this.photourl = photourl;
 	}
 
 	public User(int id, String firstname, String lastname, String email, String password, String description,
@@ -211,10 +214,20 @@ public class User {
 		this.likedlist = likedlist;
 	}
 
+	
+	public String getPhotourl() {
+		return photourl;
+	}
+
+	public void setPhotourl(String photourl) {
+		this.photourl = photourl;
+	}
+
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email
-				+ ", description=" + description + ", nickname=" + nickname + ", gender=" + gender + "interestedgender="
-				+ interestedgender + "]";
+				+ ", password=" + password + ", description=" + description + ", nickname=" + nickname + ", photourl="
+				+ photourl + ", gender=" + gender + ", interestedgender=" + interestedgender + ", likeelist="
+				+ likeelist + ", likedlist=" + likedlist + "]";
 	}
 }

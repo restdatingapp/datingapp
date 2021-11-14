@@ -24,6 +24,8 @@ export const Signup: React.FC<any> = () => {
     const [password, setPassword] = useState("");
     const [gender, setGender] = useState({id: 1, type:'male'});
     const [interested, setInterested] = useState({id: 1, type:'male'});
+    const [photourl, setphotourl] = useState("https://dwrhx129r2-flywheel.netdna-ssl.com/wp-content/uploads/2015/08/blank-avatar.png")
+    console.log(photourl);
     
     var deconstructedgid = gender.id;
     var deconstructedgtype = gender.type;
@@ -133,7 +135,7 @@ const signup = async (e: any) => {
     console.log(interestedgender);
 
     await dispatch(
-        signupUser({ firstname, lastname, email, nickname, password, gender, interestedgender})
+        signupUser({ firstname, lastname, email, nickname, password, gender, interestedgender, photourl})
     );
     navigate('../login');
 }

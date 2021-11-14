@@ -8,7 +8,7 @@ import javax.persistence.NamedQuery;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import org.springframework.transaction.annotation.Transactional;
 
 import com.datingappspringboot.models.Gender;
 
@@ -95,9 +95,21 @@ public class UserService {
 	public User getUserById(int id) {
 		return uDao.findById(id).get();
 	}
-	
+
+	@Transactional
 public User updateUser(User u) {
-		return uDao.save(u);
+		User updated = new User();
+		uDao.updateUserSetAllForId(u.getFirstname(), u.getLastname(), u.getEmail(), u.getNickname(), u.getPassword(), u.getId());
+		updated = uDao.selectUpdatedUser(u.getId());
+		return updated;
 	}
+	
+	@Transactional
+public User updatePhoto(User u) {
+	User updated = new User();
+	uDao.updateUserSetPhotoForId(u.getPhotourl(), u.getId());
+	updated = uDao.selectUpdatedUser(u.getId());
+	return updated;
+}
 
 }

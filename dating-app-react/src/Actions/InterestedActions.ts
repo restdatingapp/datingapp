@@ -15,6 +15,7 @@ export const getDates = (user:getInterested) => async (dispatch:any) => {
 
     try{
         const res = await axios.post('http://localhost:8080/user/dashboard', user)
+        console.log(res.data);
 
         return dispatch({
             type: INTERESTED_USER,
