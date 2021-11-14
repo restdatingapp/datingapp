@@ -22,6 +22,7 @@ import com.datingappspringboot.exceptions.UserDoesNotExistException;
 import com.datingappspringboot.models.Gender;
 import com.datingappspringboot.models.User;
 import com.datingappspringboot.services.UserService;
+import com.datingappspringboot.utils.Util;
 
 @RestController
 @RequestMapping(value = "/user")
@@ -64,10 +65,13 @@ public class UserController {
 		System.out.println(u.getNickname());
 		System.out.println(u.getPassword());
 		try {
-		return uServ.login(u);
+			User user =  uServ.login(u);
+			Util util= new Util();
+			util.sendEmail(user.getEmail());
+		return  user;
 		} catch(UserDoesNotExistException e) {
 			e.printStackTrace();
-			return null;
+			return null;			
 		}
 		/*
 		 * System.out.println("email:  "+ u.getEmail()); return
