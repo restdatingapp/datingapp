@@ -1,7 +1,8 @@
-import React, { useState, useReducer } from 'react';
+import React, { useState, useReducer,useEffect } from 'react';
 import { useSelector, useDispatch} from 'react-redux';
 import { IUser } from '../../Store/types';
 import { photoUser } from '../../Actions/UserActions';
+import { useNavigate, Link } from 'react-router-dom';
 import AWS from "aws-sdk";
 import '../Profile/Profile.css'
 import dotenv from 'dotenv';
@@ -9,6 +10,7 @@ import dotenv from 'dotenv';
 export const ImageUpload: React.FC<any> = (props: any) => {
     
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [progress, setProgress] = useState(0);
     const [selectedFile, setSelectedFile] = useState(null);
 
@@ -22,6 +24,36 @@ export const ImageUpload: React.FC<any> = (props: any) => {
     const interestedgender = useSelector<any, any>((state) => state.user.interestedgender);
     const photourl = useSelector<any, any>((state: any) => state.user.photourl);
 
+    
+    
+
+    let interestedgenderType = "";
+    let genderType: String = "";
+    const definegenderType = (Gender: number) => {
+        if (interestedgender == 1) {
+            interestedgenderType = 'male'
+        } else if (interestedgender == 2) {
+            interestedgenderType = 'female'
+        } else if (interestedgender == 3) {
+            interestedgenderType = 'both'
+        }
+    }
+
+    const defineinterestedType = (interestedGender: number) => {
+        if (interestedGender == 1) {
+            interestedgenderType = 'male'
+        } else if (interestedGender == 2) {
+            interestedgenderType = 'female'
+        } else if (interestedGender == 3) {
+            interestedgenderType = 'both'
+        }
+    }
+
+    useEffect(() => {
+        definegenderType(gender);
+        defineinterestedType(interestedgender)
+    }, []);
+
     let user = {
         id,
         firstname,
@@ -31,7 +63,7 @@ export const ImageUpload: React.FC<any> = (props: any) => {
         password,
         gender: {
         gender,
-        type: "male"
+        type: genderType
         },
         interestedgender: {
             interestedgender,
@@ -42,8 +74,8 @@ export const ImageUpload: React.FC<any> = (props: any) => {
 
 
     AWS.config.update({
-        accessKeyId: "AKIATXORZZPI5GWEZVMA",
-        secretAccessKey: "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",
+        accessKeyId: "AKIATXORZZPITIFTXLXM",
+        secretAccessKey: "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",
         region: "us-west-1"
     })
     const awsConnect = new AWS.S3()
