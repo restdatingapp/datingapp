@@ -74,8 +74,8 @@ export const ImageUpload: React.FC<any> = (props: any) => {
 
 
     AWS.config.update({
-        accessKeyId: "AKIATXORZZPITIFTXLXM",
-        secretAccessKey: "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",
+        accessKeyId: "AKIATXORZZPIWLZEGG6Y",
+        secretAccessKey: "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",
         region: "us-west-1"
     })
     const awsConnect = new AWS.S3()
