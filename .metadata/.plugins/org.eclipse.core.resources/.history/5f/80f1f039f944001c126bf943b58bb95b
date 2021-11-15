@@ -1,0 +1,12 @@
+package com.datingappspringboot;
+
+import org.mockito.InjectMocks;
+
+import com.datingappspringboot.services.UserService;
+
+public class UserServiceTests {
+	
+	@InjectMocks
+	public UserService uServ;
+
+}

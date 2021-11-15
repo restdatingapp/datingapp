@@ -1,0 +1,51 @@
+package com.datingappspringboot;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Before;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.web.context.WebApplicationContext;
+
+import com.datingappspringboot.models.Gender;
+import com.datingappspringboot.models.User;
+import com.datingappspringboot.repository.UserRepo;
+import com.datingappspringboot.services.UserService;
+
+@SpringBootTest
+public class DatingAppSpringBootApplicationTests {
+
+	@InjectMocks
+	public UserService uServ;
+	
+	@Mock
+	public UserRepo uDao;
+	
+	
+	@Before
+	public void initMocks() {
+		MockitoAnnotations.initMocks(this);
+	}
+	
+	
+	@Test
+	public void testValidLogin() {
+		Gender uG = new Gender(1, "male");
+		Gender iG= new Gender(2, "female");
+		User u1 = new User(1, "fNmae", "lName", "test@email.com", "pword", "testDesc", "testName", uG, iG);
+		User loggedIn= uServ.login(u1);
+		
+		assertEquals(u1.getId(), loggedIn.getId());
+	}
+	@Test
+	void contextLoads() {
+		
+	};
+	
+	
+	
+}

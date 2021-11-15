@@ -1,0 +1,44 @@
+package com.datingappspringboot;
+
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpStatus;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultMatcher;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.context.WebApplicationContext;
+
+import com.datingappspringboot.models.Gender;
+import com.datingappspringboot.models.User;
+import com.datingappspringboot.repository.UserRepo;
+
+@SpringBootTest
+public class DatingAppSpringBootApplicationTests {
+
+	
+	@Autowired
+	UserRepo uDao;
+	
+	@Test
+    public void getUser() {
+		
+	Gender uGender=new Gender(1, "male");
+	Gender iGender= new Gender(2, "female");	
+        User testUser = new User(11, "Emanuel", "PIres", "emanuelpires11@gmail.com", "password", "What a guy!", "Eman", uGender, iGender);
+User user = uDao.findByEmail(null)
+    }
+	
+	
+}

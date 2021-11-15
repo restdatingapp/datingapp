@@ -1,0 +1,34 @@
+package com.datingappspringboot;
+
+import org.junit.Before;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import com.datingappspringboot.models.Gender;
+import com.datingappspringboot.repository.UserRepo;
+import com.datingappspringboot.services.UserService;
+
+public class UserServiceTests {
+	
+	@InjectMocks
+	public UserService uServ;
+	
+	@Mock
+	public UserRepo uDao;
+	
+	
+	@Before
+	public void initMocks() {
+		MockitoAnnotations.initMocks(this);
+	}
+	
+	
+	@Test
+	public void testValidLogin() {
+		Gender uG = new Gender(1, "male");
+		Gender iG= new Gender(2, "female")
+		User u1 = new User()
+	}
+
+}

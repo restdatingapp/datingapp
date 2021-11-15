@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="DatingAppSpringBootApplicationTests" project="dating-app-java" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.datingappspringboot.DatingAppSpringBootApplicationTests" time="0.003" displayname="DatingAppSpringBootApplicationTests" uniqueid="[engine:junit-jupiter]/[class:com.datingappspringboot.DatingAppSpringBootApplicationTests]">
+    <testcase name="contextLoads" classname="com.datingappspringboot.DatingAppSpringBootApplicationTests" time="0.003" displayname="contextLoads()" uniqueid="[engine:junit-jupiter]/[class:com.datingappspringboot.DatingAppSpringBootApplicationTests]/[method:contextLoads()]"/>
+  </testsuite>
+</testrun>

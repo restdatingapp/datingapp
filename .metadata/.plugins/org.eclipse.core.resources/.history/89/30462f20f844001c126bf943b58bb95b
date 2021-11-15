@@ -1,0 +1,10 @@
+package com.datingappspringboot;
+
+@SpringBootTest
+public class DatingAppSpringBootApplicationTests {
+
+	@Test
+	void contextLoads() {
+		
+	};
+}
